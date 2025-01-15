@@ -6,11 +6,15 @@ public class Computer {
     private int ssd;
     private String cpu;
 
+    public Computer(boolean multiMonitor, int ssd, String cpu) {
+        // и зададим здесь требование параметров при создании объекта класса Computer
+        this.multiMonitor = multiMonitor;
+        this.ssd = ssd;
+        this.cpu = cpu;
+    }
+
     public Computer() {
-        //Сделаем дефолтный конструктор в явном виде и сделаем там начальные значения
-        multiMonitor = true;
-        ssd = 600;
-        cpu = "Inter Core I7-10700K";
+        // без этого блока мы не сможем создать объект с помощью конструктора по умолчанию
     }
 
     public void printInfo() {
@@ -20,7 +24,7 @@ public class Computer {
     }
 
     public static void main(String[] args) {
-        Computer computer = new Computer();
+        Computer computer = new Computer(true, 500, "Intel Core I7-10700K");
         computer.printInfo();
     }
 }
