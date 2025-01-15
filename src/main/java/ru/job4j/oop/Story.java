@@ -8,5 +8,11 @@ public class Story {
         girl.help(petya);
         wolf.eat(girl);
         petya.kill(wolf);
+        Fox fox = new Fox();
+        Hare hare = new Hare();
+        Ball ball = new Ball();
+        hare.tryEat(ball);
+        wolf.tryEat(ball);
+        fox.tryEat(ball);
     }
 }
