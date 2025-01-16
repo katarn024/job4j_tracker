@@ -12,23 +12,15 @@ public class Tamagotchi {
         return "weight: " + weight;
     }
 
-    public static void main(String[] args) {
-        /* Тут мы смотрим, то изменение переменной с которой мы берем значение когда она примитив не измен базовой переменной */
-        int weight = 100;
-        int weightCopy = weight;
-        System.out.println("weight " + weight);
-        System.out.println("copy of weight " + weightCopy);
-        weightCopy += 10;
-        System.out.println("weight " + weight);
-        System.out.println("copy of weight " + weightCopy);
-        System.out.println();
-
-        Tamagotchi pet = new Tamagotchi();
-        Tamagotchi petCopy = pet;
-        System.out.println(pet.info());
-        System.out.println("copy of " + petCopy.info());
+    public static void feedPet(Tamagotchi petCopy) {
         petCopy.feed();
+    }
+
+    public static void main(String[] args) {
+        Tamagotchi pet = new Tamagotchi();
         System.out.println(pet.info());
-        System.out.println("copy of " + petCopy.info());
+        feedPet(pet);
+        pet.feed();
+        System.out.println(pet.info());
     }
 }
