@@ -7,7 +7,7 @@ public class Matrix {
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        int num = 0;
+        int num;
         do {
             System.out.println("Введите не четное число от 3 и более: ");
             num = in.nextInt();
