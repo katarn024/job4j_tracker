@@ -17,7 +17,7 @@ public class Config {
         return search(key);
     }
 
-    private Stirng search(String key) {
+    private String search(String key) {
         return key;
     }
 }
