@@ -14,7 +14,6 @@ public class Tracker {
         return item;
     }
 
-
     public Item[] findAll() {
         return Arrays.copyOf(items, size);
     }
@@ -30,7 +29,6 @@ public class Tracker {
         result = Arrays.copyOf(items, number);
         return result;
     }
-
 
     public Item findById(int id) {
         Item result = null;
