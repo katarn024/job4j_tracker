@@ -54,7 +54,7 @@ public class Tracker {
     }
 
     public void delete(int id) {
-        int index = -1;
+        int index;
         if (1 >= id && id <= size) {
             index = indexOf(id);
             items[index] = null;
