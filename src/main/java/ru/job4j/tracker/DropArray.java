@@ -4,7 +4,9 @@ import java.util.Arrays;
 
 public class DropArray {
     public static void main(String[] args) {
-        String[] names = {"Petr", null, "Ivan", "Stepan", null};
+        String[] names = {"Petr", null, "Ivan", "Stepan", "Fedor"};
+        System.arraycopy(names, 2, names, 1, 3);
+        System.out.println(Arrays.toString(names));
         String[] result = new String[names.length];
         int size = 0;
         for (int index = 0; index < names.length; index++) {
