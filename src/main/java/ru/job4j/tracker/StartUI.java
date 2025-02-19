@@ -35,8 +35,11 @@ public class StartUI {
                 System.out.print("Введите имя: ");
                 String name = scanner.nextLine();
                 Item item = new Item(name);
-                tracker.replace(id, item);
-                System.out.println("Заявка заменена успешно");
+                if (tracker.replace(id, item)) {
+                    System.out.println("Заявка заменена успешно");
+                } else {
+                    System.out.println("Ошибка замены заявки");
+                }
             } else if (select == 6) {
                 System.out.println("Завершаю программу");
                 run = false;
@@ -47,7 +50,7 @@ public class StartUI {
     private static void showMenu() {
         String[] menu = {
                 "Добавить новую заявку", "Показать все заявки",
-                "Изменить заявку","Удалить заявку", "Показать заявку по id",
+                "Изменить заявку", "Удалить заявку", "Показать заявку по id",
                 "Показать заявки по имени", "Завершить программу"};
 
         System.out.println("Меню:");
