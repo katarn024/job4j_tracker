@@ -1,6 +1,6 @@
 package ru.job4j.polymorphism;
 
-public class TownCar implements Vehicle{
+public class TownCar implements Vehicle {
 
     @Override
     public void changeGear() {
@@ -20,5 +20,10 @@ public class TownCar implements Vehicle{
     @Override
     public void brake() {
         System.out.println("Стандартная тормозная система");
+    }
+
+    @Override
+    public void refill() {
+        System.out.println("Заправить 60л бензина");
     }
 }
