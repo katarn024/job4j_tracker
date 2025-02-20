@@ -47,6 +47,22 @@ public class StartUI {
                 Item item = tracker.findById(id);
                 tracker.delete(id);
                 System.out.println(item != null ? "Заявка удалена успешно" : "Ошибка удаления заявки");
+            } else if (select == 4) {
+                System.out.println("=== вывод заявки по id ===");
+                System.out.print("ВВведите id: ");
+                int id = Integer.parseInt(scanner.nextLine());
+                Item item = tracker.findById(id);
+                /* При проверке найденного объекта на null не стоит использовать конструкцию:
+                if (item.equals(null)) {};
+                Дело в том, что если объект item будет null-ссылкой, то вызов на этом объекте метода equals приведет
+                исключению NullPointerException. Поэтому мы используем конструкцию:
+                if (item != null) {
+                которая будет работать корректно и не приведет к остановке нашего приложения */
+                if (item != null) {
+                    System.out.println(item);
+                } else {
+                    System.out.println("Заявка с введенным id: " + id + " не найдена.");
+                }
             } else if (select == 6) {
                 System.out.println("Завершаю программу");
                 run = false;
