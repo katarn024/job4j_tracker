@@ -95,7 +95,7 @@ public class StartUI {
         }
     }
 
-    private static void createItem(Input input, Tracker tracker) {
+    public static void createItem(Input input, Tracker tracker) {
         System.out.println("=== Создание новой заявки ===");
         System.out.print("Пожалуйста, введите имя: ");
         String name = input.askStr("Enter name: ");
