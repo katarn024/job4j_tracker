@@ -1,4 +1,4 @@
-package ru.job4j.hierarchyUsage.Interface;
+package ru.job4j.hierarchy.interfac;
 
 public class Cow implements Animal {
     @Override
