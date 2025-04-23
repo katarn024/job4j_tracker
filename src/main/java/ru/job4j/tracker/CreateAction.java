@@ -15,7 +15,7 @@ public class CreateAction implements UserAction {
     @Override
     public boolean execute(Input input, Tracker tracker) {
         /* мы просто берем содержимое метода createItem из StartUI */
-        System.out.println("=== Создание новой заявки ===");
+        output.println("=== Создание новой заявки ===");
         String name = input.askStr("Введите имя: ");
         Item item = new Item(name);
         tracker.add(item);

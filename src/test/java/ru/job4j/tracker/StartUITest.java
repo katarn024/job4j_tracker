@@ -8,6 +8,7 @@ class StartUITest {
 
     @Test
     void whenCreateItem() {
+        Output output = new StubOutput();
         Input input = new MockInput(
                 new String[] {"0", "Item name", "1"}
         );
@@ -22,6 +23,7 @@ class StartUITest {
 
     @Test
     void whenReplaceItem() {
+        Output output = new StubOutput();
         Tracker tracker = new Tracker();
         Item item = tracker.add(new Item("Replaced Item"));
         String replacedName = "New item name";
@@ -38,6 +40,7 @@ class StartUITest {
 
     @Test
     void whenDeleteItem() {
+        Output output = new StubOutput();
         Tracker tracker = new Tracker();
         Item item = tracker.add(new Item("Deleted Item"));
         Input input = new MockInput(

@@ -11,24 +11,21 @@ public class StartUI {
         boolean run = true;
         while (run) {
             showMenu(actions);
-            System.out.print("Выбрать: ");
             int select = input.askInt("Enter id: ");
             UserAction action = actions[select];
-            output.println("пользователь выбрал: " + select);
             run = action.execute(input, tracker);
-            }
+        }
     }
 
     private static void showMenu(UserAction[] actions) {
-        output.println("Меню:");
+        System.out.println("Меню:");
         for (int index = 0; index < actions.length; index++) {
-            output.println(index + ". " + actions[index].name());
+            System.out.println(index + ". " + actions[index].name());
         }
     }
 
     public static void main(String[] args) {
-        /* Item item = new Item(1, "Test");
-        System.out.println(item);*/
+        Output output = new ConsoleOutput();
         Input input = new ConsoleInput();
         Tracker tracker = new Tracker();
         /* Мы создаем объект класса StartUI и сразу на этом объекте вызываем метод init().
