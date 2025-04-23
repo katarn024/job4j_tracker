@@ -17,10 +17,10 @@ public class StartUI {
         }
     }
 
-    private static void showMenu(UserAction[] actions) {
-        System.out.println("Меню:");
+    private void showMenu(UserAction[] actions) {
+        output.println("Меню:");
         for (int index = 0; index < actions.length; index++) {
-            System.out.println(index + ". " + actions[index].name());
+            output.println(index + ". " + actions[index].name());
         }
     }
 

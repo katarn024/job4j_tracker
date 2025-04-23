@@ -14,7 +14,7 @@ public class FindByIdAction implements UserAction {
 
     @Override
     public boolean execute(Input input, Tracker tracker) {
-        output.println("=== вывод заявки по id ===");
+        output.println("=== Вывод заявки по id ===");
         int id = input.askInt("Enter id: ");
         Item item = tracker.findById(id);
                 /* При проверке найденного объекта на null не стоит использовать конструкцию:
@@ -24,7 +24,7 @@ public class FindByIdAction implements UserAction {
                 if (item != null) {
                 которая будет работать корректно и не приведет к остановке нашего приложения */
         if (item != null) {
-            output.println(item);
+            output.println("Item{id=" + item.getId() + ", name=" + item.getName() + "}");
         } else {
             output.println("Заявка с введенным id: " + id + " не найдена.");
         }
