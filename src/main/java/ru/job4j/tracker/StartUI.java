@@ -1,6 +1,11 @@
 package ru.job4j.tracker;
 
 public class StartUI {
+    private final Output output;
+
+    public StartUI(Output output) {
+        this.output = output;
+    }
 
     public void init(Input input, Tracker tracker, UserAction[] actions) {
         boolean run = true;
@@ -9,15 +14,15 @@ public class StartUI {
             System.out.print("Выбрать: ");
             int select = input.askInt("Enter id: ");
             UserAction action = actions[select];
-            System.out.println("пользователь выбрал: " + select);
+            output.println("пользователь выбрал: " + select);
             run = action.execute(input, tracker);
             }
     }
 
     private static void showMenu(UserAction[] actions) {
-        System.out.println("Меню:");
+        output.println("Меню:");
         for (int index = 0; index < actions.length; index++) {
-            System.out.println(index + ". " + actions[index].name());
+            output.println(index + ". " + actions[index].name());
         }
     }
 
@@ -30,14 +35,14 @@ public class StartUI {
          * Поскольку дальше этот объект мы не будем переиспользовать, то мы не записываем созданный объект в переменную.  */
         /*Вызов не статического метода. Необходимо обратиться через объект. */
         UserAction[] actions = {
-                new CreateAction(),
-                new FindAllAction(),
-                new ReplaceAction(),
-                new DeleteAction(),
-                new FindByIdAction(),
-                new FindByNameAction(),
-                new ExitAction()
+                new CreateAction(output),
+                new FindAllAction(output),
+                new ReplaceAction(output),
+                new DeleteAction(output),
+                new FindByIdAction(output),
+                new FindByNameAction(output),
+                new ExitAction(output)
         };
-        new StartUI().init(input, tracker, actions);
+        new StartUI(output).init(input, tracker, actions);
     }
 }

@@ -1,6 +1,12 @@
 package ru.job4j.tracker;
 
 public class FindByIdAction implements UserAction {
+    private final Output output;
+
+    public FindByIdAction(Output output) {
+        this.output = output;
+    }
+
     @Override
     public String name() {
         return "Показать заявку по id";
@@ -8,8 +14,7 @@ public class FindByIdAction implements UserAction {
 
     @Override
     public boolean execute(Input input, Tracker tracker) {
-        System.out.println("=== вывод заявки по id ===");
-        System.out.print("ВВведите id: ");
+        output.println("=== вывод заявки по id ===");
         int id = input.askInt("Enter id: ");
         Item item = tracker.findById(id);
                 /* При проверке найденного объекта на null не стоит использовать конструкцию:
@@ -19,9 +24,9 @@ public class FindByIdAction implements UserAction {
                 if (item != null) {
                 которая будет работать корректно и не приведет к остановке нашего приложения */
         if (item != null) {
-            System.out.println(item);
+            output.println(item);
         } else {
-            System.out.println("Заявка с введенным id: " + id + " не найдена.");
+            output.println("Заявка с введенным id: " + id + " не найдена.");
         }
         return true;
     }
