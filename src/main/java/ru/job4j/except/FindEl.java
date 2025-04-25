@@ -1,7 +1,5 @@
 package ru.job4j.except;
 
-import java.util.Objects;
-
 public class FindEl {
     public static int indexOf(String[] value, String key) throws ElementNotFoundException {
         int result = -1;
@@ -14,6 +12,25 @@ public class FindEl {
             }
         }
         return result;
+    }
+
+    public static boolean sent(String value, String[] abuse) throws ElementAbuseException {
+        for (String key : abuse) {
+            if (key == value) {
+                throw new ElementAbuseException("Присутствует запрещенный элемент");
+            }
+        }
+        return true;
+    }
+
+    public static void process(String[] values, String key, String[] abuses) {
+        try {
+            if (indexOf(values, key) != -1) {
+                sent(key, abuses);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public static void main(String[] args) {
