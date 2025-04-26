@@ -36,8 +36,8 @@ public class FindEl {
     public static void main(String[] args) {
         try {
             System.out.println(indexOf(new String[] {"10", "66", "88"}, "115"));
-        } catch (ElementNotFoundException e) {
-            e.printStackTrace();
+        } catch (ElementNotFoundException en) {
+            en.printStackTrace();
         }
     }
 }
