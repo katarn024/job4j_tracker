@@ -20,7 +20,7 @@ public class StartUI {
             showMenu(actions);
             int select = input.askInt("Enter id: ");
             if (select < 0 || select >= actions.length) {
-                output.println("Неверный ввод, вы можете выбрать: 0 ... " + (actions.length - 1));
+                output.println("Неверный ввод, вы можете выбрать: 0 .. " + (actions.length - 1));
                 continue;
                 /* Оператор continue завершает обработку текущей итерации и передаёт
                 управление обратно циклу for, который начинает следующую итерацию.
