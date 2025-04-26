@@ -41,7 +41,7 @@ public class StartUI {
 
     public static void main(String[] args) {
         Output output = new ConsoleOutput();
-        Input input = new ValidateInput();
+        Input input = new ValidateInput(output, new ConsoleInput());
         Tracker tracker = new Tracker();
         /* Мы создаем объект класса StartUI и сразу на этом объекте вызываем метод init().
          * Поскольку дальше этот объект мы не будем переиспользовать, то мы не записываем созданный объект в переменную.  */
