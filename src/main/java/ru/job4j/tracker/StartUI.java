@@ -3,6 +3,7 @@ package ru.job4j.tracker;
 import ru.job4j.tracker.action.*;
 import ru.job4j.tracker.input.ConsoleInput;
 import ru.job4j.tracker.input.Input;
+import ru.job4j.tracker.input.ValidateInput;
 import ru.job4j.tracker.output.ConsoleOutput;
 import ru.job4j.tracker.output.Output;
 
@@ -18,6 +19,14 @@ public class StartUI {
         while (run) {
             showMenu(actions);
             int select = input.askInt("Enter id: ");
+            if (select < 0 || select >= actions.length) {
+                output.println("Неверный ввод, вы можете выбрать: 0 ... " + (actions.length - 1));
+                continue;
+                /* Оператор continue завершает обработку текущей итерации и передаёт
+                управление обратно циклу for, который начинает следующую итерацию.
+                То есть код ниже continue не выполняется (в границах цикла),
+                но при этом цикл не завершается, а просто начинается следующая итерация. */
+            }
             UserAction action = actions[select];
             run = action.execute(input, tracker);
         }
@@ -32,7 +41,7 @@ public class StartUI {
 
     public static void main(String[] args) {
         Output output = new ConsoleOutput();
-        Input input = new ConsoleInput();
+        Input input = new ValidateInput();
         Tracker tracker = new Tracker();
         /* Мы создаем объект класса StartUI и сразу на этом объекте вызываем метод init().
          * Поскольку дальше этот объект мы не будем переиспользовать, то мы не записываем созданный объект в переменную.  */
