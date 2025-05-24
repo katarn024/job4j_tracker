@@ -1,5 +1,7 @@
 package ru.job4j.tracker;
 
+import java.util.ArrayList;
+
 public class SingleTracker {
     private static SingleTracker instance = null;
 
@@ -17,11 +19,11 @@ public class SingleTracker {
 
     /* Внизу будет использован подход делегирование,это когда Внутри класса SingleTracker используется объект Tracker.
     Это позволяет использовать поведения класса Tracker в классе SingleTracker.*/
-    public Item[] findAll() {
+    public ArrayList<Item> findAll() {
         return tracker.findAll();
     }
 
-    public Item[] findByName(String key) {
+    public ArrayList<Item> findByName(String key) {
         return tracker.findByName(key);
     }
 
