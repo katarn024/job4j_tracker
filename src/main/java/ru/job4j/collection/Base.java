@@ -16,7 +16,8 @@ public class Base {
             System.out.println(value);
         };
         System.out.println();
-        for (Object value : names) {    //Данных вариант предпочтительно использовать для коллекций и массивов
+        //Данных вариант предпочтительно использовать для коллекций и массивов
+        for (Object value : names) {
             System.out.println(value);
         };
     }
