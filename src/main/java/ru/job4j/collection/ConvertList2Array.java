@@ -6,6 +6,8 @@ public class ConvertList2Array {
 
     public static int[][] toArray(List<Integer> list, int cells) {
         int group = (int) Math.ceil((double) list.size() / cells);
+        //Метод сeil принимает тип double, поэтому нам нужно делимое привести к типу double, чтобы результат деления был double.
+        //С другой стороны метод ceil возвращает тип double, а нам нужен тип int, поэтому и приводим его к типу int после вычисления
         int[][] array = new int[group][cells];
         int row = 0;
         int cell = 0;

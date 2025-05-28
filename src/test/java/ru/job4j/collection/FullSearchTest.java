@@ -42,12 +42,12 @@ public class FullSearchTest {
     @Test
     public void whenExtractNumberWithAllTasksHavingSameNumber() {
         FullSearch fullSearch = new FullSearch();
-        List tasks = Arrays.asList(
+        List<Task> tasks = Arrays.asList(
                 new Task("1", "First desc"),
                 new Task("1", "Second desc"),
                 new Task("1", "Third desc")
         );
-        Set expected = Set.of("1");
+        Set<String> expected = Set.of("1");
         assertThat(fullSearch.extractNumber(tasks)).containsAll(expected);
     }
 }
