@@ -5,7 +5,6 @@ import java.util.Set;
 import java.util.HashSet;
 
 public class FullSearch {
-
     public Set<String> extractNumber(List<Task> tasks) {
         HashSet<String> numbers = new HashSet<>();
         HashSet<String> descriptions = new HashSet<>();
@@ -13,7 +12,6 @@ public class FullSearch {
             numbers.add(task.getNumber());
             descriptions.add(task.getDescription());
         }
-
         return numbers;
     }
 }

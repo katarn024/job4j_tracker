@@ -13,7 +13,9 @@ public class UniqueText {
             check.add(word);
         }
         for (String word : duplicate) {
-            if (!check.contains(word)) {return false;};
+            if (!check.contains(word)) {
+                return false;
+            }
         }
         /* for-each text -> hashSet.contains */
         return result;
