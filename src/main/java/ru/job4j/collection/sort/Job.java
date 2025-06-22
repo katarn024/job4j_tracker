@@ -1,4 +1,4 @@
-package ru.job4j.sort;
+package ru.job4j.collection.sort;
 
 public class Job implements Comparable<Job> {
     private String name;
