@@ -3,7 +3,7 @@ package ru.job4j.tracker;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class Item {
+public class Item implements Comparable<Item> {
     private LocalDateTime created = LocalDateTime.now();
     private int id;
     private String name;
@@ -47,5 +47,10 @@ public class Item {
                 + ", name='" + name + '\''
                 + ", created=" + created.format(FORMATTER)
                 + '}';
+    }
+
+    @Override
+    public int compareTo(Item another) {
+        return Integer.compare(id, another.id);
     }
 }
