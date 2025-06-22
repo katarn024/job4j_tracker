@@ -23,6 +23,6 @@ class ItemDescByNameTest {
         expected.add(new Item(2, "Item 222"));
         expected.add(new Item(1, "Item 101"));
         expected.add(new Item(4, "Item 10"));
-        assertThat(items).containsExactlyElementsOf(expected);
+        assertThat(items).isEqualTo(expected);
     }
 }

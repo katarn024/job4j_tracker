@@ -23,6 +23,6 @@ class ItemAscByNameTest {
         expected.add(new Item(3, "Bob"));
         expected.add(new Item(1, "Cat"));
         expected.add(new Item(4, "Simon"));
-        assertThat(items).containsExactlyElementsOf(expected);
+        assertThat(items).isEqualTo(expected);
     }
 }

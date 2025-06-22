@@ -51,6 +51,6 @@ public class Item implements Comparable<Item> {
 
     @Override
     public int compareTo(Item another) {
-        return Integer.compare(id, another.id);
+        return CharSequence.compare(name, another.name);
     }
 }
