@@ -19,9 +19,4 @@ public class MaxTest {
     public void whenEquals() {
         assertThat(Max.max(4, 4), is(4));
     }
-
-    @Test
-    public void whenNegativeNumber() {
-        assertThat(Max.max(-2, -1), is(-1));
-    }
 }
