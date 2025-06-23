@@ -1,4 +1,4 @@
-package ru.job4j.hierarchy.noInterfac;
+package ru.job4j.hierarchy.no.interfac;
 
 public class GuineaPig extends Pet {
     public void runInWheel() {

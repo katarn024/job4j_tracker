@@ -14,11 +14,11 @@ public class Base {
         for (int index = 0; index < names.size(); index++) {
             Object value = names.get(index);
             System.out.println(value);
-        };
+        }
         System.out.println();
         //Данных вариант предпочтительно использовать для коллекций и массивов
         for (Object value : names) {
             System.out.println(value);
-        };
+        }
     }
 }
