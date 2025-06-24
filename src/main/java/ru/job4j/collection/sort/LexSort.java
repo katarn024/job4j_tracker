@@ -1,6 +1,5 @@
 package ru.job4j.collection.sort;
 
-import java.util.Arrays;
 import java.util.Comparator;
 
 public class LexSort implements Comparator<String> {

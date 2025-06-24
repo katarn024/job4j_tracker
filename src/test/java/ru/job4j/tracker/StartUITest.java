@@ -170,7 +170,7 @@ class StartUITest {
         };
         new StartUI(output).init(input, tracker, actions);
         assertThat(output.toString()).isEqualTo(
-                "Меню: " + System.lineSeparator()
+                "Меню:" + System.lineSeparator()
                                 + "0. Завершить программу" + System.lineSeparator()
                                 + "=== Завершение программы ===" + System.lineSeparator()
         );
