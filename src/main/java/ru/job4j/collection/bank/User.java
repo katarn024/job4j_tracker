@@ -11,18 +11,32 @@ public class User {
 		this.username = username;
 	}
 
+	/**
+	 * @return возвращает номер паспорта пользователя
+	 */
 	public String getPassport() {
 		return passport;
 	}
 
+	/**
+	 * Метод позволяет добавить паспорт пользователю
+	 * @param passport
+	 */
 	public void setPassport(String passport) {
 		this.passport = passport;
 	}
 
+	/**
+	 * @return возвращает имя пользователя
+	 */
 	public String getUsername() {
 		return username;
 	}
 
+	/**
+	 * Метод позволяет добавить имя для пользователя
+	 * @param username
+	 */
 	public void setUsername(String username) {
 		this.username = username;
 	}
