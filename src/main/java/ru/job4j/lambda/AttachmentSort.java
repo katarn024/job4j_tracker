@@ -37,6 +37,9 @@ public class AttachmentSort {
 		attachments.sort(comparatorName);
 		System.out.println(attachments);
 
+		//Ниже просто код из урока
+		Comparator<Attachment> comparatorText = (left, right) -> left.getName().compareTo(right.getName());
+
 		ArrayList<Integer> list = new ArrayList<>() {
 			@Override
 			public boolean add(Integer o) {
