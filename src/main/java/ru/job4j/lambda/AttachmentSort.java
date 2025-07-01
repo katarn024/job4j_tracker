@@ -13,6 +13,7 @@ public class AttachmentSort {
 				new Attachment("image 3", 13)
 		);
 
+		/*
 		Comparator<Attachment> comparatorSize = new Comparator<>() {
 			@Override
 			public int compare(Attachment o1, Attachment o2) {
@@ -20,6 +21,14 @@ public class AttachmentSort {
 				Attachment right = (Attachment) o2;
 				return Integer.compare(left.getSize(), right.getSize());
 			}
+		};
+		*/
+
+		//Тоже самое через ламбда будет
+		Comparator<Attachment> comparatorSize = (left, right) -> {
+			// Дополнительно добавили строку вывода отладочной информации для вывода результатов сравнения
+			System.out.println("compare - " + left.getSize() + " : " + right.getSize());
+			return Integer.compare(left.getSize(), right.getSize());
 		};
 
 		attachments.sort(comparatorSize);
