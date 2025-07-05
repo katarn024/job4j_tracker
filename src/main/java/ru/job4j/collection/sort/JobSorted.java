@@ -18,10 +18,18 @@ public class JobSorted {
         System.out.println(jobs);
         Collections.sort(jobs, new JobDescByName().thenComparing(new JobDescByPriority()));
         System.out.println(jobs);
+
         Comparator<Job> combine = new JobDescByNameLength()
                 .thenComparing(new JobDescByName())
                 .thenComparing(new JobDescByPriority());
         Collections.sort(jobs, combine);
+        System.out.println(jobs);
+
+        Comparator<Job> compareName = Comparator.comparing(Job::getName);
+        Comparator<Job> comparePriority = Comparator.comparing(Job::getPriority);
+        Comparator<Job> combine2 = compareName.thenComparing(comparePriority);
+
+        jobs.sort(combine2);
         System.out.println(jobs);
     }
 }
