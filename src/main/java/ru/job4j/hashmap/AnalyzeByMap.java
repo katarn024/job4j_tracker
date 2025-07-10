@@ -1,6 +1,7 @@
 package ru.job4j.hashmap;
 
 import java.util.*;
+import java.util.function.BiFunction;
 
 public class AnalyzeByMap {
     public static double averageScore(List<Pupil> pupils) {
@@ -37,7 +38,7 @@ public class AnalyzeByMap {
         int countPupil = 0;
         for (Pupil pupil : pupils) {
             for (Subject subject : pupil.subjects()) {
-                dict.put(subject.name(), dict.getOrDefault(subject.name(), 0) + subject.score());
+                dict.merge(subject.name(), subject.score(), Integer::sum);
             }
             countPupil++;
         }
@@ -64,9 +65,14 @@ public class AnalyzeByMap {
     public static Label bestSubject(List<Pupil> pupils) {
         Map<String, Integer> dict = new LinkedHashMap<>();
         List<Label> result = new ArrayList<>();
+
+        //BiFunction<Integer, Integer, Integer> function = (oldValue, newValue) -> oldValue + newValue;
+        BiFunction<Integer, Integer, Integer> function = Integer::sum;  //  равноценно верхей строчке
+
         for (Pupil pupil : pupils) {
             for (Subject subject : pupil.subjects()) {
-                dict.put(subject.name(), dict.getOrDefault(subject.name(), 0) + subject.score());
+                dict.merge(subject.name(), subject.score(), function);
+                //dict.put(subject.name(), dict.getOrDefault(subject.name(), 0) + subject.score());
             }
         }
         for (String key : dict.keySet()) {
